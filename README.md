@@ -56,6 +56,14 @@ src/
 
 ## Version History
 
+### v1.1 - Bento Grid Layout Restructure
+- **Major**: Restructured Features.tsx component with unified bento grid layout
+- **Added**: New bentoItems array replacing separate features and stats arrays
+- **Added**: Dynamic card types (feature, feature-with-image, stat, placeholder) for flexible grid layouts
+- **Added**: Proper TypeScript definitions for bento grid items
+- **Enhanced**: Grid layout with responsive column spanning (md:col-span-1, md:col-span-2)
+- **Improved**: Component maintainability with single grid rendering instead of multiple sections
+
 ### v1.0.3 - Production Deployment
 - **Fixed**: Resolved TypeScript errors with Framer Motion ease property
 - **Deployed**: Successfully deployed to Vercel production environment
