@@ -56,6 +56,10 @@ src/
 
 ## Version History
 
+### v1.0.1 - Dependency Fix
+- **Fixed**: Updated lucide-react to latest version for React 19 compatibility
+- **Fixed**: Resolved npm install dependency conflicts for Vercel deployment
+
 ### v1.0.0 - Initial Release
 - **Added**: Complete landing page with Hero, Features, and About Us sections
 - **Added**: Responsive navigation with smooth scrolling
