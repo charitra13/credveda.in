@@ -20,10 +20,10 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-sm font-semibold text-white mb-2">About Us</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto">
-              Financial transparency shouldn't be a privilege — it should be a right.
+              Financial transparency shouldn&apos;t be a privilege — it should be a right.
             </h2>
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">
-              We're not here to sell you loans. We're here to empower you with information, connect you with trustworthy advisors, and ensure you never have to "just sign here" without understanding what's best for your financial future.
+              We&apos;re not here to sell you loans. We&apos;re here to empower you with information, connect you with trustworthy advisors, and ensure you never have to &ldquo;just sign here&rdquo; without understanding what&apos;s best for your financial future.
             </p>
             <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium">
               Analyze Your Credit Profile Now

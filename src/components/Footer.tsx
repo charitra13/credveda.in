@@ -1,15 +1,11 @@
 import React from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { 
   Facebook, 
   Instagram, 
   Twitter, 
   Linkedin, 
-  Youtube,
-  Mail,
-  Phone,
-  MapPin
+  Youtube
 } from "lucide-react"
 
 const footerLinks = {

@@ -50,9 +50,9 @@ export function Hero() {
               We exist because —
               <br />
               <span className="text-gradient">
-                "Sign here, Sir"
+                &ldquo;Sign here, Sir&rdquo;
               </span>{" "}
-              isn't a financial advice.
+              isn&apos;t a financial advice.
             </motion.h1>
             
             <motion.p 

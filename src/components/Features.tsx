@@ -5,15 +5,9 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { 
   Calculator, 
-  DollarSign, 
-  Users, 
-  TrendingUp, 
   UserCheck, 
   BarChart3,
-  ArrowRight,
-  CreditCard,
-  Shield,
-  Zap
+  ArrowRight
 } from "lucide-react"
 
 const features = [
