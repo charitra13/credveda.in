@@ -56,6 +56,15 @@ src/
 
 ## Version History
 
+### v1.0.3 - Production Deployment
+- **Fixed**: Resolved TypeScript errors with Framer Motion ease property
+- **Deployed**: Successfully deployed to Vercel production environment
+- **Live URL**: https://credveda-1-heawu0lhs-charitrajainofficial-gmailcoms-projects.vercel.app
+
+### v1.0.2 - ESLint Fixes
+- **Fixed**: Resolved ESLint errors with unescaped entities (quotes and apostrophes)
+- **Fixed**: Removed unused imports from Features and Footer components
+
 ### v1.0.1 - Dependency Fix
 - **Fixed**: Updated lucide-react to latest version for React 19 compatibility
 - **Fixed**: Resolved npm install dependency conflicts for Vercel deployment
