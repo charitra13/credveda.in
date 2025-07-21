@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CredVeda - Financial Transparency Platform
+
+CredVeda is a financial awareness tool for the Indian loan payment ecosystem with smart EMI Reminders, loan comparison, and connection with trusted financial advisors.
+
+## Features
+
+- **Credit Profile Analysis**: AI-powered analysis using SHAP technology to reveal hidden credit strengths
+- **Smart Payment Reminders**: WhatsApp and SMS alerts to never miss payment deadlines
+- **Loan Comparison**: Side-by-side comparison of loan offers with transparent cost breakdown
+- **Financial Advisor Network**: Connect with 500+ verified DSAs and NBFCs
+- **Financial Transparency**: Empowering users with information rather than selling loans
+
+## Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
 ## Getting Started
 
@@ -16,9 +34,37 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── page.tsx          # Main landing page
+│   ├── layout.tsx        # Root layout
+│   └── globals.css       # Global styles
+├── components/
+│   ├── Header.tsx        # Site header with navigation
+│   ├── Hero.tsx          # Hero section
+│   ├── Features.tsx      # Features showcase
+│   ├── Footer.tsx        # Site footer
+│   └── ui/
+│       ├── button.tsx    # Button component
+│       └── card.tsx      # Card component
+└── lib/
+    └── utils.ts          # Utility functions
+```
+
+## Version History
+
+### v1.0.0 - Initial Release
+- **Added**: Complete landing page with Hero, Features, and About Us sections
+- **Added**: Responsive navigation with smooth scrolling
+- **Added**: About Us section with financial transparency messaging
+- **Added**: Features section showcasing key platform capabilities
+- **Added**: Footer with social links and company information
+- **Fixed**: Removed duplicate About Us sections
+- **Fixed**: Updated About Us tag styling to match Features tag
+- **Fixed**: Removed Contact Us navigation link (no corresponding section)
 
 ## Learn More
 
@@ -26,8 +72,6 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
