@@ -31,7 +31,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden gradient-bg">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">

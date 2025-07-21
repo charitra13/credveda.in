@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.2 - UI Pattern Grid & Light Mode Only
+- **Added**: Subtle diagonal fade grid pattern background visible across the entire site, inspired by PatternCraft
+- **Fixed**: Removed all component background gradients so the pattern is visible everywhere
+- **Changed**: Removed dark mode media query; site now always uses light mode colors
+- **Fixed**: Features bento grid row/column span and stat card layout to match wireframe
+
 ### v1.1 - Bento Grid Layout Restructure
 - **Major**: Restructured Features.tsx component with unified bento grid layout
 - **Added**: New bentoItems array replacing separate features and stats arrays

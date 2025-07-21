@@ -7,8 +7,24 @@ import { ArrowRight } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Header />
+    <div className="min-h-screen w-full bg-[#f9fafb] relative">
+      {/* Diagonal Fade Grid Background - Top Right */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, #d1d5db 1px, transparent 1px),
+            linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
+          `,
+          backgroundSize: "32px 32px",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)",
+          maskImage:
+            "radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)",
+        }}
+      />
+      <div className="relative z-10">
+        <Header />
       <main>
         <section id="home">
           <Hero />
@@ -31,8 +47,9 @@ export default function Home() {
             </Button>
           </div>
         </section>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

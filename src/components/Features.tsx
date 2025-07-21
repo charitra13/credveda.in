@@ -67,7 +67,7 @@ const bentoItems: BentoItem[] = [
   },
   {
     type: "placeholder",
-    className: "md:col-span-1",
+    className: "md:col-span-1 md:row-span-2",
   },
   {
     type: "feature",
@@ -125,7 +125,7 @@ export function Features() {
 
   return (
     <motion.section 
-      className="py-16 lg:py-24 gradient-section"
+      className="py-16 lg:py-24"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -206,25 +206,23 @@ export function Features() {
               )}
 
               {item.type === "stat" && (
-                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-start gap-4">
-                     {React.createElement(item.icon, { size: 24, className: "text-primary mt-1" })}
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        {item.label}
-                      </h3>
-                      <p className="text-gray-dark mb-4 flex-grow">
-                        {item.description}
-                      </p>
-                       <Button
-                        variant="ghost"
-                        className="group p-0 h-auto font-semibold text-primary hover:text-primary-dark self-start"
-                      >
-                        {item.buttonText}
-                        <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex items-start gap-4 mb-4">
+                    {React.createElement(item.icon, { size: 24, className: "text-primary mt-1" })}
+                    <h3 className="text-xl font-bold text-foreground">
+                      {item.label}
+                    </h3>
                   </div>
+                  <p className="text-gray-dark mb-6 flex-grow">
+                    {item.description}
+                  </p>
+                  <Button
+                    variant="ghost"
+                    className="group p-0 h-auto font-semibold text-primary hover:text-primary-dark self-start mt-auto"
+                  >
+                    {item.buttonText}
+                    <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
               )}
 
