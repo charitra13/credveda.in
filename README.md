@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.2.2 - Navigation Always Opaque
+- **Removed**: Transparent navigation background feature when page is not scrolled
+- **Changed**: Navigation bar now consistently uses opaque white background (`bg-white/90`) at all times
+- **Simplified**: Removed scroll state tracking logic and useEffect hook for cleaner code
+- **Enhanced**: Consistent visual appearance with backdrop blur and border always visible
+
 ### v1.2.1 - Mobile Navigation Background Fix
 - **Fixed**: Hamburger menu background transparency issue at 360x780px viewport
 - **Added**: Solid white background (`bg-white`) to mobile menu dropdown ensuring opacity at all scroll states
