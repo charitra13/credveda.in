@@ -56,6 +56,14 @@ src/
 
 ## Version History
 
+### v1.2.1 - Mobile Navigation Background Fix
+- **Fixed**: Hamburger menu background transparency issue at 360x780px viewport
+- **Added**: Solid white background (`bg-white`) to mobile menu dropdown ensuring opacity at all scroll states
+- **Enhanced**: Visual separation with top border (`border-t border-gray-200`) and shadow (`shadow-lg`)
+- **Improved**: Mobile menu spacing with increased padding (`py-6 px-2`) for better touch targets
+- **Added**: Rounded bottom corners (`rounded-b-lg`) for enhanced visual aesthetics
+- **Fixed**: Mobile menu no longer overlaps with hero section content at small viewports
+
 ### v1.2 - UI Pattern Grid & Light Mode Only
 - **Added**: Subtle diagonal fade grid pattern background visible across the entire site, inspired by PatternCraft
 - **Fixed**: Removed all component background gradients so the pattern is visible everywhere

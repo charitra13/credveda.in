@@ -97,15 +97,16 @@ export function Navigation() {
         <div
           className={cn(
             "md:hidden transition-all duration-300 ease-in-out",
+            "bg-white border-t border-gray-200 shadow-lg rounded-b-lg", // Added rounded bottom corners
             isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
           )}
         >
-          <div className="py-4 space-y-2">
+          <div className="py-6 px-2 space-y-2 bg-white"> {/* Increased padding for better spacing */}
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="block px-4 py-2 text-gray-dark hover:text-foreground hover:bg-gray-light rounded-md transition-colors font-medium"
+                className="block px-4 py-3 text-gray-dark hover:text-foreground hover:bg-gray-light rounded-md transition-colors font-medium"
                 onClick={(e) => {
                   e.preventDefault();
                   const targetId = item.href.substring(1);
