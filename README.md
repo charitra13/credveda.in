@@ -56,6 +56,17 @@ src/
 
 ## Version History
 
+### v1.3.0 - Global Floating Chat Integration
+- **Added**: FloatingChat component integrated into root layout for global availability
+- **Enhanced**: Chat interface now accessible from every page across the application
+- **Added**: Interactive FAQ system with expandable quick access panel
+- **Added**: Notification popup system with auto-hide functionality
+- **Added**: Smooth animations and transitions using Framer Motion
+- **Added**: Speech bubble styling with proper arrow indicators
+- **Added**: Auto-scroll functionality for new messages
+- **Added**: Keyboard support (ESC to close, Enter to send)
+- **Enhanced**: User experience with responsive design and accessibility features
+
 ### v1.2.3 - Hero Section Shadow Fix for Mobile
 - **Fixed**: Blue gradient shadow effect appearing around hero image placeholder on mobile viewports below 500px
 - **Made Responsive**: Decorative blur elements now scale appropriately: 128px on mobile, 192px on tablets, 288px on desktop
