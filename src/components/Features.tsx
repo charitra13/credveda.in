@@ -122,8 +122,9 @@ export function Features() {
             >
               {/* Compare Loans content */}
               <div className="mb-8">
+                <p className="text-sm font-semibold text-primary mb-2">Smart Comparison</p>
                 <h3 className="text-xl font-semibold mb-2">Compare Loan Offers Side by Side Instantly</h3>
-                <p className="text-gray-600 mb-4">See exactly which lender offers the best terms...</p>
+                <p className="text-gray-600 mb-4">See exactly which lender offers the best terms for your specific profile, with transparent breakdowns of all costs and benefits.</p>
                 <a href="#" className="text-blue-600 font-semibold hover:underline">Compare Loans &rarr;</a>
               </div>
 

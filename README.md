@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.4.6 - Smart Comparison Card Content Enhancement
+- **Added**: "Smart Comparison" tag above "Compare Loan Offers Side by Side Instantly" heading for better categorization
+- **Enhanced**: Updated body text to emphasize personalized profile matching and transparent cost breakdowns
+- **Improved**: More specific content highlighting lender comparison benefits and transparency features
+- **Clarified**: Content now explains profile-specific matching and comprehensive cost analysis
+
 ### v1.4.5 - Peace of Mind Card Content Enhancement
 - **Added**: "Peace of Mind" tag above "Never Miss Another Payment Deadline" heading for better categorization
 - **Enhanced**: Updated body text to emphasize WhatsApp and SMS alert features for loan reminders
