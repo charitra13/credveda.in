@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.4.10 - Compare Loan Card Bottom Edge Alignment Fix
+- **Fixed**: Increased "Compare Loan Offers Side by Side Instantly" card height by 4px (538px → 542px)
+- **Improved**: Perfect bottom edge alignment between right column Compare Loan card and left column bottom two cards
+- **Enhanced**: Visual consistency ensuring both column sections end at exactly the same vertical position
+- **Optimized**: Precise height adjustments to eliminate any visual misalignment between card columns
+
 ### v1.4.9 - Column Height Alignment Optimization
 - **Enhanced**: "Compare Loan Offers Side by Side" card height increased by 30px (508px → 538px)
 - **Enhanced**: Bottom two cards in left column height increased by 30px (278px → 308px)

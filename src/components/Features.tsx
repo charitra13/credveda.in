@@ -119,9 +119,9 @@ export function Features() {
               </div>
             </motion.div>
 
-            {/* Second Card - Compare Loans + Image (increased by 200px total: 100px + 70px + 30px) */}
+            {/* Second Card - Compare Loans + Image (increased height to align with bottom cards) */}
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-md h-[538px] flex flex-col"
+              className="bg-white p-6 rounded-lg shadow-md h-[542px] flex flex-col"
               variants={itemVariants}
             >
               {/* Compare Loans content */}
