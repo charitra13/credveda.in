@@ -88,9 +88,9 @@ export function Hero() {
               </div>
             </div>
             
-            {/* Decorative Elements */}
-            <div className="absolute -z-10 top-8 right-8 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute -z-10 bottom-8 left-8 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
+            {/* Decorative Elements - Responsive sizes and positions */}
+            <div className="absolute -z-10 top-4 right-4 w-32 h-32 sm:top-6 sm:right-6 sm:w-48 sm:h-48 lg:top-8 lg:right-8 lg:w-72 lg:h-72 bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute -z-10 bottom-4 left-4 w-32 h-32 sm:bottom-6 sm:left-6 sm:w-48 sm:h-48 lg:bottom-8 lg:left-8 lg:w-72 lg:h-72 bg-secondary/10 rounded-full blur-3xl" />
           </motion.div>
         </motion.div>
       </div>

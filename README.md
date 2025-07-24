@@ -56,6 +56,13 @@ src/
 
 ## Version History
 
+### v1.2.3 - Hero Section Shadow Fix for Mobile
+- **Fixed**: Blue gradient shadow effect appearing around hero image placeholder on mobile viewports below 500px
+- **Made Responsive**: Decorative blur elements now scale appropriately: 128px on mobile, 192px on tablets, 288px on desktop
+- **Enhanced**: Shadow depth effect (`shadow-2xl`) now consistently visible across all viewport sizes
+- **Improved**: Mobile positioning of decorative elements prevents interference with main image shadow
+- **Maintained**: Original elegant desktop shadow appearance preserved
+
 ### v1.2.2 - Navigation Always Opaque
 - **Removed**: Transparent navigation background feature when page is not scrolled
 - **Changed**: Navigation bar now consistently uses opaque white background (`bg-white/90`) at all times
