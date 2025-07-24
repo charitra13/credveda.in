@@ -56,6 +56,11 @@ src/
 
 ## Version History
 
+### v1.4.1 - About Us Tag Removal
+- **Removed**: "About Us" tag from the financial transparency section for cleaner design
+- **Simplified**: Section now starts directly with the main headline without redundant label
+- **Enhanced**: Improved visual hierarchy and reduced visual clutter
+
 ### v1.4.0 - Auth Card Modal Implementation
 - **Added**: New AuthCard component with modal overlay functionality
 - **Added**: Framer Motion animations for smooth card entrance/exit
