@@ -5,101 +5,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { 
-  Calculator, 
-  UserCheck, 
-  BarChart3,
-  ArrowRight,
-  Users,
-  DraftingCompass,
-  ImageIcon, // Add this import
-  LucideIcon
+  ArrowRight
 } from "lucide-react"
-
-// Type definitions for bento items
-type BentoItem = 
-  | {
-      type: "feature";
-      title: string;
-      description: string;
-      buttonText: string;
-      icon: LucideIcon;
-      className: string;
-    }
-  | {
-      type: "feature-with-image";
-      title: string;
-      description: string;
-      buttonText: string;
-      icon: LucideIcon;
-      className: string;
-    }
-  | {
-      type: "stat";
-      value: string;
-      label: string;
-      description: string;
-      buttonText: string;
-      icon: LucideIcon;
-      className: string;
-    }
-  | {
-      type: "placeholder";
-      className: string;
-    };
-
-// The new unified array for the bento grid
-const bentoItems: BentoItem[] = [
-  {
-    type: "feature",
-    title: "Know Your True Credit Worth",
-    description: "Our AI analyzes your complete financial profile using SHAP technology, revealing hidden credit strengths and giving you the confidence to negotiate better loan terms.",
-    buttonText: "Analyze My Profile",
-    icon: Calculator,
-    className: "md:col-span-1",
-  },
-  {
-    type: "feature-with-image",
-    title: "Never Miss Another Payment Deadline",
-    description: "Set smart reminders across all your loans with WhatsApp and SMS alerts, keeping your credit score intact.",
-    buttonText: "Set Reminders",
-    icon: UserCheck,
-    className: "md:col-span-2",
-  },
-  {
-    type: "placeholder",
-    className: "md:col-span-1 md:row-span-2",
-  },
-  {
-    type: "feature",
-    title: "Compare Loan Offers Side by Side Instantly",
-    description: "See exactly which lender offers the best terms for your specific profile, with transparent breakdown of all costs and benefits.",
-    buttonText: "Compare Loans",
-    icon: BarChart3,
-    className: "md:col-span-2",
-  },
-  {
-    type: "stat",
-    value: "500+",
-    label: "Connect with Financial Advisors who Actually Care",
-    description: "Access our network of 500+ verified DSAs and NBFCs who compete to offer you the best loans - no bias, only trust.",
-    buttonText: "Connect with Advisors",
-    icon: Users,
-    className: "md:col-span-1",
-  },
-  {
-    type: "stat",
-    value: "1/1",
-    label: "Navigate your Financial Journey Effortlessly",
-    description: "Clean, intuitive interface designed for real people, not finance experts.",
-    buttonText: "Explore Platform",
-    icon: DraftingCompass,
-    className: "md:col-span-1",
-  },
-  {
-    type: "placeholder",
-    className: "md:col-span-1",
-  },
-];
 
 export function Features() {
   const sectionVariants = {
@@ -147,92 +54,83 @@ export function Features() {
           </p>
         </motion.div>
 
-        {/* Bento Grid Layout */}
+        {/* New Grid Layout as per guide */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-5 gap-8"
           variants={sectionVariants}
         >
-          {bentoItems.map((item, index) => (
-            <motion.div
-              key={index}
-              className={cn(
-                "bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col",
-                item.className
-              )}
+          {/* LEFT COLUMN - Total height: 750px */}
+          <div className="lg:col-span-2 flex flex-col gap-8 lg:h-[750px]">
+
+            {/* --- Know Your True Credit Worth --- Increased by 50px */}
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow-md flex flex-col h-[510px]"
               variants={itemVariants}
             >
-              {item.type === "feature" && (
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="inline-flex p-3 rounded-lg mb-6 bg-primary/10 text-primary w-fit">
-                    {React.createElement(item.icon, { size: 24 })}
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-dark mb-6 flex-grow">
-                    {item.description}
-                  </p>
-                  <Button
-                    variant="ghost"
-                    className="group p-0 h-auto font-semibold text-primary hover:text-primary-dark self-start"
-                  >
-                    {item.buttonText}
-                    <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              )}
-
-              {item.type === "feature-with-image" && (
-                <div className="grid grid-cols-3 gap-6 p-8 flex-grow">
-                  <div className="col-span-1 bg-gray-medium rounded-lg flex items-center justify-center">
-                     <ImageIcon size={40} className="text-gray-dark" />
-                  </div>
-                  <div className="col-span-2 flex flex-col">
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-dark mb-4 flex-grow">
-                        {item.description}
-                      </p>
-                      <Button
-                        variant="ghost"
-                        className="group p-0 h-auto font-semibold text-primary hover:text-primary-dark self-start"
-                      >
-                        {item.buttonText}
-                        <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                  </div>
-                </div>
-              )}
-
-              {item.type === "stat" && (
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-start gap-4 mb-4">
-                    {React.createElement(item.icon, { size: 24, className: "text-primary mt-1" })}
-                    <h3 className="text-xl font-bold text-foreground">
-                      {item.label}
-                    </h3>
-                  </div>
-                  <p className="text-gray-dark mb-6 flex-grow">
-                    {item.description}
-                  </p>
-                  <Button
-                    variant="ghost"
-                    className="group p-0 h-auto font-semibold text-primary hover:text-primary-dark self-start mt-auto"
-                  >
-                    {item.buttonText}
-                    <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              )}
-
-              {item.type === "placeholder" && (
-                <div className="bg-gray-medium rounded-2xl flex items-center justify-center min-h-[200px] aspect-square">
-                  <ImageIcon size={48} className="text-gray-dark" />
-                </div>
-              )}
+              <h3 className="text-xl font-semibold mb-2">Know Your True Credit Worth</h3>
+              <p className="text-gray-600 mb-4">Our AI analyzes your complete financial profile...</p>
+              <a href="#" className="text-blue-600 font-semibold hover:underline mb-6">Analyze My Profile &rarr;</a>
+              
+              <div className="bg-gray-200 rounded-lg flex-grow flex items-center justify-center">
+                <span className="text-gray-500">Image Placeholder 1</span>
+              </div>
             </motion.div>
-          ))}
+
+            {/* --- Bottom Two Cards --- Increased height by 50px each */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[208px]"
+              variants={itemVariants}
+            >
+              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
+                <h3 className="text-xl font-semibold mb-2">Connect with Financial Advisors...</h3>
+                <p className="text-gray-600 mb-4 flex-grow">Access our network of 500+ verified DSAs...</p>
+                <a href="#" className="text-blue-600 font-semibold hover:underline">Connect with Advisors &rarr;</a>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
+                <h3 className="text-xl font-semibold mb-2">Navigate your Financial Journey...</h3>
+                <p className="text-gray-600 mb-4 flex-grow">Clean, intuitive interface designed for real people...</p>
+                <a href="#" className="text-blue-600 font-semibold hover:underline">Explore Platform &rarr;</a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* RIGHT COLUMN - Total height: 750px */}
+          <div className="lg:col-span-3 flex flex-col gap-8 lg:h-[750px]">
+            
+            {/* First Card - Never Miss Another Payment Deadline */}
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow-md flex h-[280px]"
+              variants={itemVariants}
+            >
+              <div className="bg-gray-200 rounded-lg shadow-md w-1/3 flex items-center justify-center mr-8">
+                <span className="text-gray-500">Image Placeholder 2</span>
+              </div>
+              <div className="w-2/3 flex flex-col justify-center">
+                <h3 className="text-xl font-semibold mb-2">Never Miss Another Payment Deadline</h3>
+                <p className="text-gray-600 mb-4 flex-grow">Set smart reminders across all your loans...</p>
+                <a href="#" className="text-blue-600 font-semibold hover:underline">Set Reminders &rarr;</a>
+              </div>
+            </motion.div>
+
+            {/* Second Card - Compare Loans + Image (increased by 100px) */}
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow-md h-[438px] flex flex-col"
+              variants={itemVariants}
+            >
+              {/* Compare Loans content */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold mb-2">Compare Loan Offers Side by Side Instantly</h3>
+                <p className="text-gray-600 mb-4">See exactly which lender offers the best terms...</p>
+                <a href="#" className="text-blue-600 font-semibold hover:underline">Compare Loans &rarr;</a>
+              </div>
+
+              {/* Bottom image */}
+              <div className="bg-gray-200 rounded-lg shadow-md flex-grow flex items-center justify-center">
+                <span className="text-gray-500">Image Placeholder 3</span>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </motion.section>

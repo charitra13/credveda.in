@@ -56,6 +56,13 @@ src/
 
 ## Version History
 
+### v1.4.2 - Features Section Height Balance Optimization
+- **Enhanced**: "Know Your True Credit Worth" card height increased by 50px for better visual proportion
+- **Enhanced**: Bottom two cards in left column increased by 50px each for improved content spacing
+- **Enhanced**: "Compare Loan Offers Side by Side" card height increased by 100px for better content hierarchy
+- **Improved**: Both columns now maintain equal height (750px) ensuring perfect visual alignment
+- **Fixed**: Column height balance to create seamless visual flow and hierarchy across the Features section
+
 ### v1.4.1 - About Us Tag Removal
 - **Removed**: "About Us" tag from the financial transparency section for cleaner design
 - **Simplified**: Section now starts directly with the main headline without redundant label
