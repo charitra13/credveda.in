@@ -59,9 +59,7 @@ export function Hero() {
               className="text-lg text-gray-dark max-w-lg"
               variants={itemVariants}
             >
-              CredVeda is a financial awareness tool for the Indian loan payment ecosystem 
-              with smart EMI Reminders, compare loan offers instantly, and connect 
-              with 500+ trusted financial advisors to secure the best rates.
+              Analyze your credit profile with our AI. Never miss payment deadlines with smart EMI Reminders, compare loan offers instantly, and connect with 500+ trusted financial advisors to secure the best rates.
             </motion.p>
             
             <motion.div 

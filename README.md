@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.4.11 - Hero Section Body Text Enhancement
+- **Enhanced**: Updated hero section body text to emphasize AI-powered credit profile analysis
+- **Improved**: Changed opening from "CredVeda is a financial awareness tool" to "Analyze your credit profile with our AI"
+- **Enhanced**: More direct and action-oriented messaging that highlights key AI capabilities upfront
+- **Improved**: Better flow connecting AI analysis with payment reminders, loan comparison, and advisor connections
+
 ### v1.4.10 - Compare Loan Card Bottom Edge Alignment Fix
 - **Fixed**: Increased "Compare Loan Offers Side by Side Instantly" card height by 4px (538px → 542px)
 - **Improved**: Perfect bottom edge alignment between right column Compare Loan card and left column bottom two cards
