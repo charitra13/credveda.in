@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.4.9 - Column Height Alignment Optimization
+- **Enhanced**: "Compare Loan Offers Side by Side" card height increased by 30px (508px → 538px)
+- **Enhanced**: Bottom two cards in left column height increased by 30px (278px → 308px)
+- **Improved**: Both columns now maintain equal height (850px) ensuring perfect bottom edge alignment
+- **Fixed**: Visual alignment issue where column 2 card didn't reach the same bottom edge as column 1 cards
+
 ### v1.4.8 - AI Powered Insights Tag Update
 - **Changed**: Updated top card tag from "Smart Analysis" to "AI Powered Insights" for better brand positioning
 - **Enhanced**: More impactful messaging that emphasizes AI capabilities and actionable insights
