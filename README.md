@@ -56,6 +56,24 @@ src/
 
 ## Version History
 
+### v1.5.0 - Floating Chat Theme & Responsive Design Enhancement
+- **Enhanced**: Complete theme alignment of floating chat component with website design system
+- **Updated**: Replaced generic blue colors with custom CSS variables (`--primary`, `--foreground`, `--gray-dark`)
+- **Added**: Gradient-primary styling for chat trigger button matching site's button patterns
+- **Enhanced**: Responsive design implementation across all viewports (mobile, tablet, desktop)
+- **Improved**: Mobile-first approach with full-screen modal on small screens (`inset-4`)
+- **Added**: Tablet optimization with adaptive sizing (`sm:h-[70vh]`) and proper margins
+- **Enhanced**: Desktop floating behavior with optimal positioning (`lg:w-96 lg:h-[600px]`)
+- **Updated**: Button styling to use established component variants (`primary`, `ghost`)
+- **Enhanced**: Typography consistency with Plus Jakarta Sans font family inheritance
+- **Improved**: Message bubble styling with rounded corners (`rounded-2xl`) and enhanced shadows
+- **Added**: FAQ section responsive behavior with adaptive max-height (`lg:max-h-40`)
+- **Enhanced**: Input focus states with proper primary color theming
+- **Improved**: Speech bubble arrow colors matching theme (`#0066ff` for user, `#f8f9fa` for bot)
+- **Added**: Smooth hover transitions and scale effects matching site's interaction patterns
+- **Enhanced**: Touch-friendly design with proper 44px+ touch targets across all devices
+- **Improved**: Accessibility with proper contrast ratios and keyboard navigation support
+
 ### v1.4.12 - Financial Transparency Section Height Optimization
 - **Fixed**: Set Financial Transparency section to exactly 600px height as requested
 - **Removed**: Responsive padding (`py-16 lg:py-24`) replaced with fixed height (`h-[600px]`)

@@ -16,7 +16,7 @@ interface Message {
 }
 
 export function FloatingChat() {
-  // Add styles for speech bubble arrows
+  // Add styles for speech bubble arrows with theme colors
   React.useEffect(() => {
     const style = document.createElement('style')
     style.textContent = `
@@ -29,7 +29,7 @@ export function FloatingChat() {
         height: 0;
         border-style: solid;
         border-width: 8px 8px 0 0;
-        border-color: #e2e8f0 transparent transparent transparent;
+        border-color: #f8f9fa transparent transparent transparent;
         z-index: 1;
       }
       
@@ -42,7 +42,7 @@ export function FloatingChat() {
         height: 0;
         border-style: solid;
         border-width: 8px 0 0 8px;
-        border-color: #2563eb transparent transparent transparent;
+        border-color: #0066ff transparent transparent transparent;
         z-index: 1;
       }
     `
@@ -223,29 +223,29 @@ export function FloatingChat() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute bottom-16 right-0 mb-2 w-80 max-w-sm"
+            className="absolute bottom-16 right-0 mb-2 w-72 sm:w-80 max-w-sm"
           >
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 relative hover:shadow-xl transition-shadow duration-200">
+            <div className="bg-background rounded-lg shadow-xl border border-gray-300 p-3 relative hover:shadow-2xl transition-all duration-300">
               {/* Speech bubble arrow */}
-              <div className="absolute bottom-0 right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white transform translate-y-full"></div>
-              <div className="absolute bottom-0 right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-200 transform translate-y-full translate-x-0"></div>
+              <div className="absolute bottom-0 right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-background transform translate-y-full"></div>
+              <div className="absolute bottom-0 right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300 transform translate-y-full translate-x-0"></div>
               
               <div className="flex items-center gap-3">
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-4 h-4 text-blue-600" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <MessageCircle className="w-4 h-4 text-primary" />
                   </div>
                 </div>
-                <div className="flex-1 min-w-0 cursor-pointer hover:bg-gray-50 rounded-md p-1 -m-1 transition-colors" onClick={() => {
+                <div className="flex-1 min-w-0 cursor-pointer hover:bg-gray-light rounded-md p-1 -m-1 transition-colors duration-200" onClick={() => {
                   setIsOpen(true)
                   setShowNotification(false)
                 }}>
-                  <p className="text-sm font-medium text-gray-900">Need help?</p>
-                  <p className="text-xs text-gray-600">Chat with us about credit analysis!</p>
+                  <p className="text-sm font-semibold text-foreground">Need help?</p>
+                  <p className="text-xs text-gray-dark">Chat with us about credit analysis!</p>
                 </div>
                 <button
                   onClick={() => setShowNotification(false)}
-                  className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
+                  className="flex-shrink-0 text-gray-dark hover:text-foreground transition-colors duration-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -258,7 +258,7 @@ export function FloatingChat() {
       <Button
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="h-14 w-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg transition-all duration-200 hover:scale-105"
+        className="h-14 w-14 rounded-full gradient-primary shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
       >
         <MessageCircle className="h-6 w-6 text-white" />
         <span className="sr-only">Open chat</span>
@@ -300,13 +300,17 @@ export function FloatingChat() {
                 stiffness: 300,
                 duration: 0.3
               }}
-              className="fixed bottom-28 right-6 w-full max-w-md h-[600px] bg-background border rounded-lg shadow-xl z-50 flex flex-col"
+              className="fixed 
+                bottom-4 right-4 left-4 top-4 
+                sm:bottom-28 sm:right-8 sm:left-8 sm:top-auto sm:h-[70vh] 
+                lg:bottom-28 lg:right-6 lg:left-auto lg:w-96 lg:h-[600px] 
+                bg-background border border-gray-300 rounded-2xl shadow-2xl z-50 flex flex-col"
             >
               {/* Header */}
-              <div className="p-4 pb-2 border-b flex justify-between items-center flex-shrink-0">
+              <div className="p-4 pb-2 border-b border-gray-300 flex justify-between items-center flex-shrink-0">
                 <div>
-                  <h3 className="text-lg font-semibold">Chat with CredVeda</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <h3 className="text-lg font-semibold text-foreground">Chat with CredVeda</h3>
+                  <p className="text-sm text-gray-dark">
                     Get instant help with your credit analysis
                   </p>
                 </div>
@@ -314,7 +318,7 @@ export function FloatingChat() {
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsOpen(false)}
-                  className="h-8 w-8"
+                  className="h-8 w-8 hover:bg-gray-light"
                 >
                   <X className="h-4 w-4" />
                   <span className="sr-only">Close</span>
@@ -339,10 +343,10 @@ export function FloatingChat() {
                       }`}
                     >
                       <div
-                        className={`max-w-[80%] rounded-lg px-3 py-2 text-sm relative ${
+                        className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm relative shadow-md ${
                           message.sender === "user"
-                            ? "bg-blue-600 text-white message-bubble-user"
-                            : "bg-muted text-foreground message-bubble-bot"
+                            ? "bg-primary text-white message-bubble-user"
+                            : "bg-gray-light text-foreground message-bubble-bot"
                         }`}
                       >
                         {message.text}
@@ -353,21 +357,21 @@ export function FloatingChat() {
               </ScrollArea>
 
               {/* FAQ Quick Access Section */}
-              <div className="border-t flex-shrink-0">
+              <div className="border-t border-gray-300 flex-shrink-0">
                 <div className="p-4 pt-2 pb-2">
                   <button
                     onClick={() => setIsFAQExpanded(!isFAQExpanded)}
-                    className="flex items-center justify-between w-full group hover:bg-gray-50 rounded-md p-1 -m-1 transition-colors"
+                    className="flex items-center justify-between w-full group hover:bg-gray-light rounded-lg p-2 -m-2 transition-colors duration-200"
                   >
                     <div className="flex items-center gap-2">
-                      <HelpCircle className="h-4 w-4 text-blue-600" />
-                      <span className="text-sm font-medium text-gray-700">Frequently Asked Questions</span>
+                      <HelpCircle className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-semibold text-foreground">Frequently Asked Questions</span>
                     </div>
                     <motion.div
                       animate={{ rotate: isFAQExpanded ? 0 : -90 }}
                       transition={{ duration: 0.2, ease: "easeInOut" }}
                     >
-                      <ChevronDown className="h-4 w-4 text-gray-500 group-hover:text-gray-700 transition-colors" />
+                      <ChevronDown className="h-4 w-4 text-gray-dark group-hover:text-foreground transition-colors duration-200" />
                     </motion.div>
                   </button>
                 </div>
@@ -382,7 +386,7 @@ export function FloatingChat() {
                       className="overflow-hidden"
                     >
                       <div className="px-4 pb-4">
-                        <div className="grid grid-cols-1 gap-2 max-h-32 overflow-y-auto overflow-x-hidden">
+                        <div className="grid grid-cols-1 gap-2 max-h-32 lg:max-h-40 overflow-y-auto overflow-x-hidden">
                           {faqData.map((faq) => (
                             <motion.button
                               key={faq.id}
@@ -392,16 +396,16 @@ export function FloatingChat() {
                               transition={{ duration: 0.2, delay: 0.1 }}
                               whileHover={{ 
                                 scale: 1.02,
-                                backgroundColor: "#dbeafe",
+                                backgroundColor: "var(--color-primary)",
+                                color: "white",
                                 transition: { duration: 0.2 }
                               }}
                               whileTap={{ 
                                 scale: 0.95,
-                                backgroundColor: "#bfdbfe",
                                 transition: { duration: 0.1 }
                               }}
                               onClick={() => handleFAQClick(faq)}
-                              className="text-left p-2 text-xs bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200 truncate"
+                              className="text-left p-3 text-xs bg-primary/5 hover:bg-primary text-primary hover:text-white rounded-lg transition-all duration-200 border border-primary/20 truncate font-medium"
                             >
                               {faq.question}
                             </motion.button>
@@ -414,19 +418,20 @@ export function FloatingChat() {
               </div>
               
               {/* Input Area */}
-              <div className="border-t p-4 flex-shrink-0">
+              <div className="border-t border-gray-300 p-4 flex-shrink-0">
                 <div className="flex space-x-2">
                   <Input
                     placeholder="Type your message..."
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    className="flex-1"
+                    className="flex-1 border-gray-300 focus:border-primary focus:ring-primary"
                   />
                   <Button 
                     size="icon" 
                     onClick={handleSendMessage}
-                    className="bg-blue-600 hover:bg-blue-700"
+                    variant="primary"
+                    className="flex-shrink-0"
                   >
                     <Send className="h-4 w-4" />
                     <span className="sr-only">Send message</span>
