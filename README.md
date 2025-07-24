@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.4.3 - Features Section Extended Height Optimization
+- **Enhanced**: "Compare Loan Offers Side by Side" card height increased by additional 70px (now 508px total)
+- **Enhanced**: Bottom two cards in left column increased by additional 70px each (now 278px each)
+- **Improved**: Both columns now maintain equal height (820px) ensuring perfect visual alignment
+- **Optimized**: Extended card heights provide better content spacing and improved visual hierarchy
+
 ### v1.4.2 - Features Section Height Balance Optimization
 - **Enhanced**: "Know Your True Credit Worth" card height increased by 50px for better visual proportion
 - **Enhanced**: Bottom two cards in left column increased by 50px each for improved content spacing

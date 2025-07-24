@@ -59,8 +59,8 @@ export function Features() {
           className="grid grid-cols-1 lg:grid-cols-5 gap-8"
           variants={sectionVariants}
         >
-          {/* LEFT COLUMN - Total height: 750px */}
-          <div className="lg:col-span-2 flex flex-col gap-8 lg:h-[750px]">
+          {/* LEFT COLUMN - Total height: 820px */}
+          <div className="lg:col-span-2 flex flex-col gap-8 lg:h-[820px]">
 
             {/* --- Know Your True Credit Worth --- Increased by 50px */}
             <motion.div 
@@ -76,9 +76,9 @@ export function Features() {
               </div>
             </motion.div>
 
-            {/* --- Bottom Two Cards --- Increased height by 50px each */}
+            {/* --- Bottom Two Cards --- Increased height by 120px total (50px + 70px) */}
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[208px]"
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[278px]"
               variants={itemVariants}
             >
               <div className="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
@@ -95,8 +95,8 @@ export function Features() {
             </motion.div>
           </div>
 
-          {/* RIGHT COLUMN - Total height: 750px */}
-          <div className="lg:col-span-3 flex flex-col gap-8 lg:h-[750px]">
+          {/* RIGHT COLUMN - Total height: 820px */}
+          <div className="lg:col-span-3 flex flex-col gap-8 lg:h-[820px]">
             
             {/* First Card - Never Miss Another Payment Deadline */}
             <motion.div 
@@ -113,9 +113,9 @@ export function Features() {
               </div>
             </motion.div>
 
-            {/* Second Card - Compare Loans + Image (increased by 100px) */}
+            {/* Second Card - Compare Loans + Image (increased by 170px total: 100px + 70px) */}
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-md h-[438px] flex flex-col"
+              className="bg-white p-6 rounded-lg shadow-md h-[508px] flex flex-col"
               variants={itemVariants}
             >
               {/* Compare Loans content */}
