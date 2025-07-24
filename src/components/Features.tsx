@@ -5,7 +5,9 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { 
-  ArrowRight
+  ArrowRight,
+  Users,
+  Navigation
 } from "lucide-react"
 
 export function Features() {
@@ -83,14 +85,16 @@ export function Features() {
               variants={itemVariants}
             >
               <div className="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
-                <h3 className="text-xl font-semibold mb-2">Connect with Financial Advisors...</h3>
-                <p className="text-gray-600 mb-4 flex-grow">Access our network of 500+ verified DSAs...</p>
+                <Users className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Connect with Financial Advisors who Actually Care</h3>
+                <p className="text-gray-600 mb-4 flex-grow">Access our network of 500+ verified DSAs and NBFCs who compete to offer you the best rates, not just any rate.</p>
                 <a href="#" className="text-blue-600 font-semibold hover:underline">Connect with Advisors &rarr;</a>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
-                <h3 className="text-xl font-semibold mb-2">Navigate your Financial Journey...</h3>
-                <p className="text-gray-600 mb-4 flex-grow">Clean, intuitive interface designed for real people...</p>
+                <Navigation className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Navigate your Financial Journey Effortlessly</h3>
+                <p className="text-gray-600 mb-4 flex-grow">Clean, intuitive interface designed for real people, not finance experts.</p>
                 <a href="#" className="text-blue-600 font-semibold hover:underline">Explore Platform &rarr;</a>
               </div>
             </motion.div>

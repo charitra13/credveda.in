@@ -56,6 +56,16 @@ src/
 
 ## Version History
 
+### v1.4.7 - Bottom Cards Content and Icons Enhancement
+- **Added**: Users icon (Lucide React) to "Connect with Financial Advisors who Actually Care" card
+- **Added**: Navigation icon (Lucide React) to "Navigate your Financial Journey Effortlessly" card
+- **Enhanced**: Updated "Financial Advisors" card heading to emphasize advisors who "Actually Care"
+- **Enhanced**: Updated body text to highlight competitive rates from DSAs and NBFCs network
+- **Enhanced**: Updated "Financial Journey" heading to emphasize "Effortlessly" navigation
+- **Enhanced**: Updated body text to emphasize intuitive interface designed for real people, not finance experts
+- **Improved**: Visual hierarchy with prominent icons above each card heading
+- **Added**: Consistent icon styling with primary color and proper spacing
+
 ### v1.4.6 - Smart Comparison Card Content Enhancement
 - **Added**: "Smart Comparison" tag above "Compare Loan Offers Side by Side Instantly" heading for better categorization
 - **Enhanced**: Updated body text to emphasize personalized profile matching and transparent cost breakdowns
