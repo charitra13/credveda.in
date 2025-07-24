@@ -32,7 +32,7 @@ export default function Home() {
         <section id="features">
           <Features />
         </section>
-        <section id="about" className="py-16 lg:py-24 bg-blue-600 relative">
+        <section id="about" className="h-[600px] bg-blue-600 relative flex items-center justify-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto">
               Financial transparency shouldn&apos;t be a privilege — it should be a right.
