@@ -56,6 +56,16 @@ src/
 
 ## Version History
 
+### v1.4.0 - Auth Card Modal Implementation
+- **Added**: New AuthCard component with modal overlay functionality
+- **Added**: Framer Motion animations for smooth card entrance/exit
+- **Added**: Backdrop blur and click-to-close functionality
+- **Changed**: Replaced standalone auth page with centered modal card
+- **Enhanced**: Navigation buttons now trigger auth modal instead of page navigation
+- **Removed**: Standalone auth page implementation for cleaner codebase
+- **Added**: Close button (X) in auth card for better UX
+- **Improved**: Responsive design with proper mobile padding and max-width constraints
+
 ### v1.3.0 - Global Floating Chat Integration
 - **Added**: FloatingChat component integrated into root layout for global availability
 - **Enhanced**: Chat interface now accessible from every page across the application

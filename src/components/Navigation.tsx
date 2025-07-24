@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { AuthCard } from "./AuthCard"
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -14,6 +15,7 @@ const navItems = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isAuthOpen, setIsAuthOpen] = useState(false)
   // Removed scroll state since nav is now always opaque
 
   return (
@@ -69,8 +71,12 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button asChild variant="primary" size="default">
-              <Link href="/auth">Sign Up</Link>
+            <Button 
+              variant="primary" 
+              size="default"
+              onClick={() => setIsAuthOpen(true)}
+            >
+              Sign Up
             </Button>
           </div>
 
@@ -111,13 +117,27 @@ export function Navigation() {
               </Link>
             ))}
             <div className="px-4 pt-4">
-              <Button asChild variant="primary" size="default" className="w-full">
-                <Link href="/auth">Sign Up</Link>
+              <Button 
+                variant="primary" 
+                size="default" 
+                className="w-full"
+                onClick={() => {
+                  setIsAuthOpen(true)
+                  setIsOpen(false)
+                }}
+              >
+                Sign Up
               </Button>
             </div>
           </div>
         </div>
       </div>
+      
+      {/* Auth Card Modal */}
+      <AuthCard 
+        isOpen={isAuthOpen} 
+        onClose={() => setIsAuthOpen(false)} 
+      />
     </nav>
   )
 }
