@@ -67,9 +67,10 @@ export function Features() {
               className="bg-white p-6 rounded-lg shadow-md flex flex-col h-[510px]"
               variants={itemVariants}
             >
+              <p className="text-sm font-semibold text-primary mb-2">Smart Analysis</p>
               <h3 className="text-xl font-semibold mb-2">Know Your True Credit Worth</h3>
-              <p className="text-gray-600 mb-4">Our AI analyzes your complete financial profile...</p>
-              <a href="#" className="text-blue-600 font-semibold hover:underline mb-6">Analyze My Profile &rarr;</a>
+              <p className="text-gray-600 mb-4">Our AI analyzes your complete financial profile using SHAP technology, revealing hidden credit strengths and giving you the confidence to negotiate better loan terms.</p>
+              <a href="#" className="text-blue-600 font-semibold hover:underline mb-6">Analyse My Profile &rarr;</a>
               
               <div className="bg-gray-200 rounded-lg flex-grow flex items-center justify-center">
                 <span className="text-gray-500">Image Placeholder 1</span>

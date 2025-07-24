@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.4.4 - Smart Analysis Card Content Enhancement
+- **Added**: "Smart Analysis" tag above "Know Your True Credit Worth" heading for better categorization
+- **Enhanced**: Updated body text to highlight SHAP technology and credit strength analysis benefits
+- **Fixed**: Corrected spelling to "Analyse My Profile" (British English) for consistency
+- **Improved**: More descriptive and engaging content that emphasizes AI capabilities and user benefits
+
 ### v1.4.3 - Features Section Extended Height Optimization
 - **Enhanced**: "Compare Loan Offers Side by Side" card height increased by additional 70px (now 508px total)
 - **Enhanced**: Bottom two cards in left column increased by additional 70px each (now 278px each)
