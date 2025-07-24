@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,6 +19,37 @@ interface AuthCardProps {
 }
 
 export function AuthCard({ isOpen, onClose }: AuthCardProps) {
+  // Prevent body scroll when modal is open
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
+  // Handle ESC key to close modal
+  React.useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isOpen) {
+        onClose()
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen, onClose])
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -28,7 +60,7 @@ export function AuthCard({ isOpen, onClose }: AuthCardProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999]"
             onClick={onClose}
           />
           
@@ -38,7 +70,7 @@ export function AuthCard({ isOpen, onClose }: AuthCardProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed top-0 left-0 right-0 bottom-0 z-[9999] flex items-center justify-center p-4"
           >
             <Card className="w-full max-w-md relative">
               {/* Close button */}
