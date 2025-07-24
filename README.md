@@ -56,6 +56,11 @@ src/
 
 ## Version History
 
+### v1.4.8 - AI Powered Insights Tag Update
+- **Changed**: Updated top card tag from "Smart Analysis" to "AI Powered Insights" for better brand positioning
+- **Enhanced**: More impactful messaging that emphasizes AI capabilities and actionable insights
+- **Improved**: Tag now better aligns with the SHAP technology and credit analysis content
+
 ### v1.4.7 - Bottom Cards Content and Icons Enhancement
 - **Added**: Users icon (Lucide React) to "Connect with Financial Advisors who Actually Care" card
 - **Added**: Navigation icon (Lucide React) to "Navigate your Financial Journey Effortlessly" card
