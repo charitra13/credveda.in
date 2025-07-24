@@ -108,8 +108,9 @@ export function Features() {
                 <span className="text-gray-500">Image Placeholder 2</span>
               </div>
               <div className="w-2/3 flex flex-col justify-center">
+                <p className="text-sm font-semibold text-primary mb-2">Peace of Mind</p>
                 <h3 className="text-xl font-semibold mb-2">Never Miss Another Payment Deadline</h3>
-                <p className="text-gray-600 mb-4 flex-grow">Set smart reminders across all your loans...</p>
+                <p className="text-gray-600 mb-4 flex-grow">Set smart reminders across all your loans with WhatsApp and SMS alerts, keeping your credit score healthy.</p>
                 <a href="#" className="text-blue-600 font-semibold hover:underline">Set Reminders &rarr;</a>
               </div>
             </motion.div>

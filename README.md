@@ -56,6 +56,12 @@ src/
 
 ## Version History
 
+### v1.4.5 - Peace of Mind Card Content Enhancement
+- **Added**: "Peace of Mind" tag above "Never Miss Another Payment Deadline" heading for better categorization
+- **Enhanced**: Updated body text to emphasize WhatsApp and SMS alert features for loan reminders
+- **Improved**: More specific content highlighting credit score health benefits and alert mechanisms
+- **Clarified**: Content now clearly explains the dual notification system (WhatsApp + SMS)
+
 ### v1.4.4 - Smart Analysis Card Content Enhancement
 - **Added**: "Smart Analysis" tag above "Know Your True Credit Worth" heading for better categorization
 - **Enhanced**: Updated body text to highlight SHAP technology and credit strength analysis benefits
