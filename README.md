@@ -56,6 +56,37 @@ src/
 
 ## Version History
 
+### v1.7.0 - Features Breakpoint Optimization for 1024-1279px Viewport Range
+- **Fixed**: Resolved column height alignment issues in Features.tsx component for 1024-1279px viewport range
+- **Changed**: Updated all responsive breakpoints from `lg:` (1024px) to `xl:` (1280px) for two-column grid layout
+- **Enhanced**: Single-column layout now extends through 1024-1279px maintaining the optimal 1023px design
+- **Improved**: Two-column layout now only activates at 1280px+ where there's sufficient horizontal space
+- **Fixed**: Bottom two cards in left column no longer appear below right column's bottom edge
+- **Updated**: Grid layout breakpoint: `lg:grid-cols-5` → `xl:grid-cols-5`
+- **Updated**: Column spans: `lg:col-span-2/3` → `xl:col-span-2/3`
+- **Updated**: All height classes: `lg:min-h-[]` and `lg:h-[]` → `xl:min-h-[]` and `xl:h-[]`
+- **Updated**: Spacing and layout: `lg:gap-8`, `lg:mb-8`, `lg:aspect-square` → `xl:gap-8`, `xl:mb-8`, `xl:aspect-square`
+- **Enhanced**: Responsive design now provides consistent visual hierarchy across all viewport ranges
+- **Improved**: Layout alignment ensures perfect column height matching when two-column layout is active
+
+### v1.6.0 - Features Component Complete Responsiveness Overhaul
+- **Fixed**: Complete responsiveness issues in Features.tsx component for 360x780px and all viewport sizes
+- **Removed**: All fixed heights (`h-[510px]`, `h-[278px]`, `lg:h-[850px]`) that caused content overflow
+- **Added**: Mobile-first responsive design with proper breakpoints (`sm:`, `lg:`) throughout component
+- **Enhanced**: Image placeholders now resize properly with responsive aspect ratios and min-heights
+- **Fixed**: Card content no longer flows outside card boundaries with proper `flex-shrink-0` and content organization
+- **Improved**: Cards now reorder correctly on mobile (stack vertically) and desktop (complex grid layout)
+- **Added**: Responsive typography with text sizes that scale appropriately across devices (`text-sm sm:text-base`)
+- **Enhanced**: Flexible card heights using `min-h-[]` instead of fixed heights preventing content overflow
+- **Improved**: Payment reminders card layout switches from horizontal (desktop) to vertical (mobile) stacking
+- **Added**: Proper responsive spacing with adaptive gaps (`gap-6 sm:gap-8`) and padding (`p-4 sm:p-6`)
+- **Fixed**: Icon sizes now scale responsively (`h-6 w-6 sm:h-8 sm:w-8`) for better mobile display
+- **Enhanced**: Image placeholder aspect ratios (`aspect-square sm:aspect-[4/3] lg:aspect-square`) for optimal display
+- **Improved**: Bottom card content alignment using `mt-auto` for consistent CTA button positioning
+- **Added**: Minimum heights for image placeholders (`min-h-[200px] sm:min-h-[250px]`) ensuring visibility
+- **Enhanced**: Grid system now properly adapts from single column mobile to complex desktop layout
+- **Fixed**: All responsiveness issues ensuring perfect display on 360px width viewports and all screen sizes
+
 ### v1.5.0 - Floating Chat Theme & Responsive Design Enhancement
 - **Enhanced**: Complete theme alignment of floating chat component with website design system
 - **Updated**: Replaced generic blue colors with custom CSS variables (`--primary`, `--foreground`, `--gray-dark`)
