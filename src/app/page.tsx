@@ -1,3 +1,9 @@
+"use client"
+
+import { useEffect, useState, Suspense } from "react"
+import { useSearchParams } from "next/navigation"
+import { AuthCard } from "@/components/AuthCard"
+import { useAuth } from "@/hooks/useAuth"
 import { Header } from "@/components/Header"
 import { Hero } from "@/components/Hero"
 import { Features } from "@/components/Features"
@@ -5,7 +11,38 @@ import { Footer } from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
-export default function Home() {
+function HomeContent() {
+  const [isAuthOpen, setIsAuthOpen] = useState(false)
+  const { user, loading } = useAuth()
+  const searchParams = useSearchParams()
+
+  // Handle auth modal triggers from URL params or middleware redirects
+  useEffect(() => {
+    const authRequired = searchParams.get('auth')
+    
+    if (authRequired === 'required' && !user && !loading) {
+      setIsAuthOpen(true)
+    }
+    
+    if (authRequired === 'error') {
+      const message = searchParams.get('message')
+      console.error('Auth error:', message)
+      // You could show a toast notification here
+    }
+  }, [searchParams, user, loading])
+
+  // Auto-close auth modal when user is authenticated
+  useEffect(() => {
+    if (user && isAuthOpen) {
+      setIsAuthOpen(false)
+      
+      // If there's a redirect URL, navigate to it
+      const redirectTo = searchParams.get('redirectTo')
+      if (redirectTo) {
+        window.location.href = redirectTo
+      }
+    }
+  }, [user, isAuthOpen, searchParams])
   return (
     <div className="min-h-screen w-full bg-[#f9fafb] relative">
       {/* Diagonal Fade Grid Background - Top Right */}
@@ -24,10 +61,10 @@ export default function Home() {
         }}
       />
       <div className="relative z-10">
-        <Header />
+        <Header onAuthClick={() => setIsAuthOpen(true)} />
       <main>
         <section id="home">
-          <Hero />
+                      <Hero />
         </section>
         <section id="features">
           <Features />
@@ -49,6 +86,20 @@ export default function Home() {
         </main>
         <Footer />
       </div>
+      
+      <AuthCard 
+        isOpen={isAuthOpen} 
+        onClose={() => setIsAuthOpen(false)}
+        redirectTo={searchParams.get('redirectTo') || '/dashboard'}
+      />
     </div>
   );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  )
 }

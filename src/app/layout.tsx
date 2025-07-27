@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { FloatingChat } from "@/components/floating-chat"
+import { AuthProvider } from "@/hooks/useAuth"
 
 
 const geistSans = Geist({
@@ -42,8 +43,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} antialiased`}
       >
-        {children}
-        <FloatingChat />
+        <AuthProvider>
+          {children}
+          <FloatingChat />
+        </AuthProvider>
       </body>
     </html>
   );

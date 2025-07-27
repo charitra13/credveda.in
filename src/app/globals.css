@@ -70,16 +70,72 @@ body {
 .text-gray-dark { color: var(--gray-dark); }
 .text-gray-light { color: var(--gray-light); }
 .text-foreground { color: var(--foreground); }
+.text-gray-500 { color: #6b7280; }
+.text-gray-600 { color: #4b5563; }
+.text-gray-700 { color: #374151; }
+.text-gray-900 { color: #111827; }
+.text-red-600 { color: #dc2626; }
+.text-red-700 { color: #b91c1c; }
+.text-yellow-600 { color: #d97706; }
+.text-yellow-700 { color: #a16207; }
+.text-green-600 { color: #16a34a; }
+.text-green-700 { color: #15803d; }
+.text-blue-600 { color: #2563eb; }
+.text-blue-700 { color: #1d4ed8; }
+.text-blue-800 { color: #1e40af; }
+.text-purple-700 { color: #7c3aed; }
+.text-success { color: #16a34a; }
+.text-warning { color: #d97706; }
+.text-danger { color: #dc2626; }
 
 .bg-primary { background-color: var(--primary); }
 .bg-secondary { background-color: var(--secondary); }
 .bg-accent { background-color: var(--accent); }
 .bg-gray-light { background-color: var(--gray-light); }
 .bg-gray-medium { background-color: var(--gray-medium); }
+.bg-white { background-color: #ffffff; }
+.bg-gray-50 { background-color: #f9fafb; }
+.bg-gray-100 { background-color: #f3f4f6; }
+.bg-gray-200 { background-color: #e5e7eb; }
+.bg-gray-500 { background-color: #6b7280; }
+.bg-red-50 { background-color: #fef2f2; }
+.bg-red-100 { background-color: #fee2e2; }
+.bg-yellow-50 { background-color: #fffbeb; }
+.bg-yellow-100 { background-color: #fef3c7; }
+.bg-green-50 { background-color: #f0fdf4; }
+.bg-green-100 { background-color: #dcfce7; }
+.bg-blue-50 { background-color: #eff6ff; }
+.bg-blue-100 { background-color: #dbeafe; }
+.bg-purple-50 { background-color: #faf5ff; }
+.bg-purple-100 { background-color: #f3e8ff; }
 
 .border-gray-200 { border-color: #e5e7eb; }
 .border-gray-300 { border-color: #d1d5db; }
 .border-gray-800 { border-color: #1f2937; }
+.border-red-200 { border-color: #fecaca; }
+.border-yellow-200 { border-color: #fde68a; }
+.border-green-200 { border-color: #bbf7d0; }
+.border-primary { border-color: var(--primary); }
+
+/* Dashboard-specific utilities */
+.bg-sidebar { background-color: #fafbfc; }
+.border-sidebar { border-color: #e1e5e9; }
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.15s ease-in-out;
+}
+.dashboard-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Star fill colors */
+.fill-yellow-400 { fill: #facc15; }
+.text-yellow-400 { color: #facc15; }
+.fill-gray-300 { fill: #d1d5db; }
+.text-gray-300 { color: #d1d5db; }
 
 /* Line Clamp Utilities for Text Truncation */
 .line-clamp-2 {
