@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
-  User, 
-  Mail, 
-  Phone, 
+  User,
+  Mail,
+  Phone,
   MapPin,
   Calendar,
   Edit3,
@@ -29,14 +29,35 @@ import {
   DashboardTooltipProvider, 
   DashboardTooltipTrigger 
 } from '@/components/dashboard/ui/tooltip'
-import { cn, mockUser, mockCreditAnalysis, getTierInfo, formatDate } from '@/lib/dashboard/utils'
+import { cn, mockCreditAnalysis, getTierInfo } from '@/lib/dashboard/utils'
+import { useUserData, getUserInitials } from '@/hooks/useUserData'
 
 export default function UserProfile() {
   const [isEditing, setIsEditing] = useState(false)
   const [activeTab, setActiveTab] = useState('profile')
-  const [profileData, setProfileData] = useState(mockUser)
+  const { userData, loading } = useUserData()
+  const [profileData, setProfileData] = useState(userData)
   
+  // Update profileData when userData changes
+  useEffect(() => {
+    if (userData) {
+      setProfileData(userData)
+    }
+  }, [userData])
+
+  if (loading || !userData || !profileData) {
+    return (
+      <div className="p-6 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-2 text-gray-600">Loading profile...</p>
+        </div>
+      </div>
+    )
+  }
+
   const tierInfo = getTierInfo(mockCreditAnalysis.tier)
+  const userInitials = getUserInitials(profileData.name)
 
   const handleSave = () => {
     setIsEditing(false)
@@ -49,7 +70,7 @@ export default function UserProfile() {
     { label: 'Email Address', value: profileData.email, icon: Mail, key: 'email' },
     { label: 'Phone Number', value: profileData.phone, icon: Phone, key: 'phone' },
     { label: 'Location', value: profileData.location, icon: MapPin, key: 'location' },
-    { label: 'Member Since', value: formatDate(profileData.joinedDate), icon: Calendar, key: 'joinedDate', readonly: true }
+    { label: 'Member Since', value: new Date(profileData.joinedDate).toLocaleDateString(), icon: Calendar, key: 'joinedDate', readonly: true }
   ]
 
   const creditStats = [
@@ -58,6 +79,8 @@ export default function UserProfile() {
     { label: 'Total Amount', value: `₹${profileData.totalAmount.toLocaleString()}`, trend: '', color: 'text-foreground' },
     { label: 'On-time Payments', value: `${profileData.onTimePayments}%`, trend: '+2.5%', color: 'text-success' }
   ]
+
+  // ... rest of the component logic remains the same
 
   return (
     <div className="p-6 space-y-6">
@@ -125,22 +148,30 @@ export default function UserProfile() {
       {activeTab === 'profile' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Profile Picture and Tier */}
-          <DashboardCard>
-            <DashboardCardContent className="p-6 text-center">
-              <div className="relative inline-block mb-4">
-                <div className="w-24 h-24 rounded-full bg-gradient-primary flex items-center justify-center text-white text-2xl font-bold">
-                  {profileData.name.split(' ').map(n => n[0]).join('')}
-                </div>
-                {isEditing && (
-                  <DashboardButton 
-                    size="icon" 
-                    variant="outline" 
-                    className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full"
-                  >
-                    <Camera className="h-4 w-4" />
-                  </DashboardButton>
-                )}
-              </div>
+<DashboardCard>
+  <DashboardCardContent className="p-6 text-center">
+    <div className="relative inline-block mb-4">
+      {profileData.avatar ? (
+        <img 
+          src={profileData.avatar} 
+          alt={profileData.name}
+          className="w-24 h-24 rounded-full object-cover"
+        />
+      ) : (
+        <div className="w-24 h-24 rounded-full bg-gradient-primary flex items-center justify-center text-white text-2xl font-bold">
+          {userInitials}
+        </div>
+      )}
+      {isEditing && (
+        <DashboardButton 
+          size="icon" 
+          variant="outline" 
+          className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full"
+        >
+          <Camera className="h-4 w-4" />
+        </DashboardButton>
+      )}
+    </div>
               <h3 className="text-lg font-semibold mb-2">{profileData.name}</h3>
               <div className={cn("inline-flex items-center px-3 py-1 rounded-full text-sm border mb-4", tierInfo.bgColor, tierInfo.color, tierInfo.borderColor)}>
                 <CreditCard className="h-4 w-4 mr-1" />
@@ -170,7 +201,11 @@ export default function UserProfile() {
                         <input
                           type={info.key === 'email' ? 'email' : info.key === 'phone' ? 'tel' : 'text'}
                           value={info.value}
-                          onChange={(e) => setProfileData(prev => ({ ...prev, [info.key]: e.target.value }))}
+                          onChange={(e) =>
+                            setProfileData((prev) =>
+                              prev ? { ...prev, [info.key]: e.target.value } : null
+                            )
+                          }
                           className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                         />
                       ) : (

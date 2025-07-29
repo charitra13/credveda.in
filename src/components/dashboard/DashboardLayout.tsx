@@ -14,7 +14,8 @@ import {
   LogOut,
   ChevronDown
 } from 'lucide-react'
-import { cn, mockUser } from '@/lib/dashboard/utils'
+import { cn } from '@/lib/dashboard/utils'
+import { useUserData, getUserInitials } from '@/hooks/useUserData'
 import { DashboardButton } from '@/components/dashboard/ui/button'
 
 interface DashboardLayoutProps {
@@ -35,11 +36,26 @@ const navigation = [
 export default function DashboardLayout({ children, currentPage }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false)
+  const { userData, loading } = useUserData()
 
   const updatedNavigation = navigation.map(item => ({
     ...item,
     current: item.href === `/dashboard/${currentPage}` || (currentPage === 'dashboard' && item.name === 'Dashboard')
   }))
+
+  // Show loading state while fetching user data
+  if (loading || !userData) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading your profile...</p>
+        </div>
+      </div>
+    )
+  }
+
+  const userInitials = getUserInitials(userData.name)
 
   return (
     <div className="dashboard-layout flex h-screen bg-gray-50">
@@ -75,17 +91,25 @@ export default function DashboardLayout({ children, currentPage }: DashboardLayo
             </DashboardButton>
           </div>
 
-          {/* User info */}
+          {/* User info - UPDATED WITH REAL DATA */}
           <div className="p-6 border-b border-sidebar">
             <div className="flex items-center">
-              <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
-                <span className="text-white font-medium text-sm">
-                  {mockUser.name.split(' ').map(n => n[0]).join('')}
-                </span>
-              </div>
+              {userData.avatar ? (
+                <img 
+                  src={userData.avatar} 
+                  alt={userData.name}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+              ) : (
+                <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <span className="text-white font-medium text-sm">
+                    {userInitials}
+                  </span>
+                </div>
+              )}
               <div className="ml-3">
-                <p className="text-sm font-medium text-foreground">{mockUser.name}</p>
-                <p className="text-xs text-gray-dark">{mockUser.email}</p>
+                <p className="text-sm font-medium text-foreground">{userData.name}</p>
+                <p className="text-xs text-gray-dark">{userData.email}</p>
               </div>
             </div>
           </div>
@@ -163,20 +187,28 @@ export default function DashboardLayout({ children, currentPage }: DashboardLayo
                 <span className="absolute -top-1 -right-1 h-3 w-3 bg-danger rounded-full border-2 border-white"></span>
               </DashboardButton>
 
-              {/* Profile dropdown */}
+              {/* Profile dropdown - UPDATED WITH REAL DATA */}
               <div className="relative">
                 <DashboardButton
                   variant="ghost"
                   className="flex items-center space-x-2 hover:bg-gray-100 px-2 py-1.5"
                   onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
                 >
-                  <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <span className="text-white font-medium text-xs">
-                      {mockUser.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+                  {userData.avatar ? (
+                    <img 
+                      src={userData.avatar} 
+                      alt={userData.name}
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
+                      <span className="text-white font-medium text-xs">
+                        {userInitials}
+                      </span>
+                    </div>
+                  )}
                   <div className="hidden sm:block text-left">
-                    <p className="text-sm font-medium text-foreground">{mockUser.name}</p>
+                    <p className="text-sm font-medium text-foreground">{userData.name}</p>
                   </div>
                   <ChevronDown className="h-4 w-4 text-gray-500" />
                 </DashboardButton>
@@ -192,10 +224,10 @@ export default function DashboardLayout({ children, currentPage }: DashboardLayo
                     
                     <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
                       <div className="py-2">
-                        {/* User info in dropdown for mobile */}
+                        {/* User info in dropdown for mobile - UPDATED WITH REAL DATA */}
                         <div className="px-4 py-2 border-b border-gray-100 sm:hidden">
-                          <p className="text-sm font-medium text-foreground">{mockUser.name}</p>
-                          <p className="text-xs text-gray-500">{mockUser.email}</p>
+                          <p className="text-sm font-medium text-foreground">{userData.name}</p>
+                          <p className="text-xs text-gray-500">{userData.email}</p>
                         </div>
                         
                         <a 

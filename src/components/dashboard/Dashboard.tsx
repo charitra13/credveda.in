@@ -28,9 +28,23 @@ import {
   DashboardTooltipProvider, 
   DashboardTooltipTrigger 
 } from '@/components/dashboard/ui/tooltip'
-import { cn, mockUser, mockCreditAnalysis, mockEMIReminders, getTierInfo, formatCurrency, formatDate } from '@/lib/dashboard/utils'
+import { cn, mockCreditAnalysis, mockEMIReminders, getTierInfo, formatCurrency, formatDate } from '@/lib/dashboard/utils'
+import { useUserData, getDisplayName } from '@/hooks/useUserData'
 
 export default function Dashboard() {
+  const { userData, loading } = useUserData()
+  
+  if (loading || !userData) {
+    return (
+      <div className="p-6 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-2 text-gray-600">Loading dashboard...</p>
+        </div>
+      </div>
+    )
+  }
+
   const tierInfo = getTierInfo(mockCreditAnalysis.tier)
   const upcomingEMIs = mockEMIReminders.filter(emi => emi.status === 'upcoming')
   const nextEMI = upcomingEMIs[0]
@@ -89,10 +103,10 @@ export default function Dashboard() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Welcome Section */}
+      {/* Welcome Section - UPDATED */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-foreground">Welcome back, {mockUser.name.split(` `)[0]}!</h1>
+          <h1 className="text-2xl font-bold text-foreground">Welcome back, {getDisplayName(userData.name)}!</h1>
           <p className="text-gray-dark">Here&apos;s your financial health overview</p>
         </div>
         <div className="flex items-center space-x-2">
