@@ -70,11 +70,11 @@ function HomeContent() {
           <Features />
         </section>
         <section id="about" className="h-[600px] bg-blue-600 relative flex items-center justify-center">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center items-center space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-4xl mx-auto">
               Financial transparency shouldn&apos;t be a privilege — it should be a right.
             </h2>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-white/90 max-w-3xl mx-auto">
               We&apos;re not here to sell you loans. We&apos;re here to empower you with information, connect you with trustworthy advisors, and ensure you never have to &ldquo;just sign here&rdquo; without understanding what&apos;s best for your financial future.
             </p>
             <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium">
