@@ -40,8 +40,8 @@ Your current environment variables are set. Add the callback URL for reference:
 
 ```bash
 # Your existing variables (✅ Already configured)
-NEXT_PUBLIC_SUPABASE_URL=https://pofqpzqlzxsqbejopndt.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
 
 # Callback URL for reference (used in Google Cloud Console)
 # http://localhost:3000/auth/callback (development)
