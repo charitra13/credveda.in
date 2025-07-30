@@ -1,12 +1,14 @@
 'use client'
 
-import React from "react"
-import Link from "next/link"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { User } from "lucide-react"
+import { AuthCard } from "@/components/AuthCard"
 
 export function Hero() {
+  const [isAuthCardOpen, setIsAuthCardOpen] = useState(false)
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,8 +71,12 @@ export function Hero() {
               <Button variant="primary" size="lg">
                 Analyze Profile
               </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/auth">Sign Up</Link>
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => setIsAuthCardOpen(true)}
+              >
+                Sign Up
               </Button>
             </motion.div>
           </div>
@@ -92,6 +98,13 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
+      
+      {/* Auth Card Modal */}
+      <AuthCard
+        isOpen={isAuthCardOpen}
+        onClose={() => setIsAuthCardOpen(false)}
+        redirectTo="/dashboard"
+      />
     </section>
   )
 }
